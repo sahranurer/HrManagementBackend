@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
             _jobService = jobService;
         }
 
-        [HttpGet]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = _jobService.GetAll();

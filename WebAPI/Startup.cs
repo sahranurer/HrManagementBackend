@@ -31,8 +31,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            services.AddScoped<IJobService, JobManager>();
-            services.AddScoped<IJobDal, JobDal>();
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -54,6 +53,7 @@ namespace WebAPI
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
