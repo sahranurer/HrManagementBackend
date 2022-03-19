@@ -27,6 +27,10 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<LocationManager>().As<ILocationService>().SingleInstance();
             builder.RegisterType<LocationDal>().As<ILocationDal>().SingleInstance();
 
+            builder.RegisterType<DepartmentManager>().As<IDepartmentService>().SingleInstance();
+            builder.RegisterType<DepartmentDal>().As<IDepartmentDal>().SingleInstance();
+
+
         }
     }
 }
