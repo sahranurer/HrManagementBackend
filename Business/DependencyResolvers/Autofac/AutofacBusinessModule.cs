@@ -24,6 +24,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CountryManager>().As<ICountryService>().SingleInstance();
             builder.RegisterType<CountryDal>().As<ICountryDal>().SingleInstance();
 
+            builder.RegisterType<LocationManager>().As<ILocationService>().SingleInstance();
+            builder.RegisterType<LocationDal>().As<ILocationDal>().SingleInstance();
+
         }
     }
 }
