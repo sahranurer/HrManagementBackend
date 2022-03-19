@@ -15,5 +15,6 @@ namespace DataAccess.Data
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-TOD8TAV\SQLEXPRESS;Database=HrManagementDb;Trusted_Connection=true");
         }
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<Region> Regions { get; set; }
     }
 }

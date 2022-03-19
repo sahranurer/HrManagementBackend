@@ -11,41 +11,41 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class JobController : ControllerBase
+    public class RegionController : ControllerBase
     {
-        public readonly IJobService _jobService;
+        readonly IRegionService _regionService;
 
-        public JobController(IJobService jobService)
+        public RegionController(IRegionService regionService)
         {
-            _jobService = jobService;
+            _regionService = regionService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _jobService.GetAll();
-            if (result.Success)
+            var results = _regionService.GetAll();
+            if (results.Success)
             {
-                return Ok(result);
+                return Ok(results);
             }
-            return BadRequest();
+            return BadRequest(results);
         }
 
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _jobService.GetById(id);
+            var result = _regionService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
             }
-            return BadRequest();
+            return BadRequest(result);
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Job job)
+        public IActionResult Add(Region region)
         {
-            var result = _jobService.Add(job);
+            var result = _regionService.Add(region);
             if (result.Success)
             {
                 return Ok(result);
@@ -54,9 +54,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("delete")]
-        public IActionResult Delete(Job job)
+        public IActionResult Delete(Region region)
         {
-            var result = _jobService.Delete(job);
+            var result = _regionService.Delete(region);
             if (result.Success)
             {
                 return Ok(result);
@@ -65,14 +65,15 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult Update(Job job)
+        public IActionResult Update(Region region)
         {
-            var result = _jobService.Update(job);
+            var result = _regionService.Update(region);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
     }
 }
