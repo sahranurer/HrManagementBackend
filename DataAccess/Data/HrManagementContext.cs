@@ -20,5 +20,6 @@ namespace DataAccess.Data
         public DbSet<Location> Locations { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Dependent> Dependents { get; set; }
     }
 }
