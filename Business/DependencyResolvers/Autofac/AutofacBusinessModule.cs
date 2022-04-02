@@ -37,6 +37,10 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<DependentDal>().As<IDependentDal>().SingleInstance();
 
 
+            builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+            builder.RegisterType<UserDal>().As<IUserDal>().SingleInstance();
+
+
         }
     }
 }
